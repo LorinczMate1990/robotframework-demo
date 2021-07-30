@@ -62,8 +62,8 @@ Assign variable conditionaly
 
 Basic demo with lists
     @{list}=    Create List    1    2    3
-    Log to console    The list as \${list}: ${list}
-    Log to console    The list as \@{list}: @{list}
+    Log to console    The list as \${list} (scalar variable): ${list}
+    Log to console    The list as \@{list} (list variable): @{list}
     Log to console    Calling keyword with ${list}
     Keyword with regular parameters    ${list}    Secund param    Third param
     Log to console    Calling keyword with @{list}
@@ -77,6 +77,19 @@ Basic demo with lists
     Log To Console    Split list to three params
     ${a}    ${b}    ${c} =    Set Variable    ${list}
     Log To Console    \${a}: ${a}, \${b}: ${b}, \${c}: ${c}
+
+Difference between \$ and \@ at assignminet
+    ${dummy}    @{variable using \@ at assign} =    Create List    1    2    3
+    ${dummy}    ${variable using \$ at assign} =    Create List    1    2
+
+    Log To Console    variable using \@ at assign: ${variable using \@ at assign}
+    Log To Console    variable using \$ at assign: ${variable using \$ at assign}
+
+    Log To Console    Could we use a list variable in the middle of the left side of an assignment? Yes.
+
+    ${dummy}    @{listVariable}    ${dummy2} =    Create List    1    2    3   4
+
+    Log To Console    dummy: ${dummy}, listVariable: ${listVariable}, dummy2: ${dummy2}
 
 Basic demo with dictionaries
     # https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Create%20Dictionary
