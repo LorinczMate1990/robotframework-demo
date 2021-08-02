@@ -6,7 +6,7 @@ Library    ./Pylabry.py    first library instance    WITH NAME    pylabry1
 Library    ./Pylabry.py    second library instance    WITH NAME    pylabry2
 
 Suite Setup    This keyword should run in the beginning of the testing
-Suite Teardown    This test case should run after every tests is finished
+Suite Teardown    This keyword should run after every tests is finished
 
 Test Setup    This keyword shold run before every testcases
 Test Teardown    This keyword shold run after every testcases
@@ -31,7 +31,7 @@ Test case 3
     Log To Console    RetVal: ${retVal}
 
 Test case to demonstrate templates 1
-    [Template]    Keyword for template demo wit ${a} and ${doesntReallyMetter}
+    [Template]    Keyword for template demo with ${a} and ${canBeAnything}
     val1OfParam1    val1ForParam2
     foo    bar
     small    big
@@ -99,8 +99,8 @@ Basic demo with dictionaries
 This keyword should run in the beginning of the testing
     Log To Console    CALL This keyword should run in the beginning of the testing
 
-This test case should run after every tests is finished
-    Log To Console    CALL This test case should run after every tests is finished
+This keyword should run after every tests is finished
+    Log To Console    CALL This keyword should run after every tests is finished
 
 This keyword shold run before every testcases
     Log To Console    CALL This keyword shold run before every testcases
@@ -111,7 +111,7 @@ This keyword shold run after every testcases
 Keyword with ${text} as inline variable
     Log To Console    Variable: ${text}
 
-Keyword for template demo wit ${param1} and ${param2}
+Keyword for template demo with ${param1} and ${param2}
     Log To Console    This keyword was called with '${param1}' and '${param2}'
 
 Keyword with regular parameters
